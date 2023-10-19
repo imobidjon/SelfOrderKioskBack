@@ -6,8 +6,11 @@ const dotenv = require('dotenv')
 
 //routes 
 const categoriesRoute = require("./routes/categories")
+const productsRoute = require("./routes/products")
 
 const app = express()
+app.use(express.json())
+
 
 dotenv.config()
 
@@ -25,6 +28,7 @@ app.use(cors({
 }));
 
 app.use('/api', categoriesRoute)
+app.use('/api', productsRoute)
 
 app.listen(process.env.PORT, () => {
     console.log(`server at http://localhost:${process.env.PORT}`)
