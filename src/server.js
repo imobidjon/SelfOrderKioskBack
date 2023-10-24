@@ -15,7 +15,9 @@ dotenv.config()
 
 // mdb connection
 mongoose.connect(
-    `mongodb+srv://${process.env.MONGO_DB_USERNAME}:${process.env.MONGO_DB_PASSWORD}@cluster0.r2livdc.mongodb.net/`)
+    `mongodb+srv://${process.env.MONGO_DB_USERNAME}:${process.env.MONGO_DB_PASSWORD}@cluster0.r2livdc.mongodb.net/`, {
+        useNewUrlParser: true, useUnifiedTopology: true 
+    })
     .then(() => {
         console.log('DataBase Connected')
     })
