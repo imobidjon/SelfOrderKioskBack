@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const productsSchema = new mongoose.Schema({
     category: {
-        type: mongoose.Schema.Types.String, ref: 'Categories'
+        type: String
     },
     name: {
         type: String,

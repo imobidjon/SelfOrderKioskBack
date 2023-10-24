@@ -7,11 +7,10 @@ const dotenv = require('dotenv')
 //routes 
 const categoriesRoute = require("./routes/categories")
 const productsRoute = require("./routes/products")
+const ordersRoute = require("./routes/order")
 
 const app = express()
 app.use(express.json())
-
-
 dotenv.config()
 
 // mdb connection
@@ -24,11 +23,13 @@ mongoose.connect(
 
 
 app.use(cors({
-    origin: '*'
+    origin: '*',
+    methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
 }));
 
 app.use('/api', categoriesRoute)
 app.use('/api', productsRoute)
+app.use('/api', ordersRoute)
 
 app.listen(process.env.PORT, () => {
     console.log(`server at http://localhost:${process.env.PORT}`)
