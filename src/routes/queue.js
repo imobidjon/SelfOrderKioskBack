@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Order = require("../models/Order");
 
-router.get("/api/orders/queue", async (req, res) => {
+router.get("/orders/queue", async (req, res) => {
   const inProgressOrders = await Order.find(
     { inProgress: true, isCanceled: false },
     "number"
