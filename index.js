@@ -1,14 +1,14 @@
 const express = require('express')
-const data = require('../data')
+const data = require('./data')
 const mongoose = require('mongoose')
 const cors = require('cors');
 const dotenv = require('dotenv')
 
 //routes 
-const categoriesRoute = require("./routes/categories")
-const productsRoute = require("./routes/products")
-const ordersRoute = require("./routes/order")
-const queuesRoute = require("./routes/queue")
+const categoriesRoute = require("./src/routes/categories")
+const productsRoute = require("./src/routes/products")
+const ordersRoute = require("./src/routes/order")
+const queuesRoute = require("./src/routes/queue")
 
 const app = express()
 app.use(express.json())
